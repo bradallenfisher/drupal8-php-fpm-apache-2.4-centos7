@@ -9,14 +9,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "bradallenfisher/centos7"
   
   # ip address
-  config.vm.network "private_network", ip: "192.168.7.7"
+  config.vm.network "private_network", ip: "192.168.8.8"
   
   # host name
-  config.vm.hostname = "local.phpfpm.dev"
+  config.vm.hostname = "drupal8.phpfpm.dev"
   
   # virtual box name
   config.vm.provider "virtualbox" do |v|
-    v.name = "phpfpm_5-6-apache_2-4"
+    v.name = "drupal8"
     v.memory = 4096
     v.cpus = 2
   end
