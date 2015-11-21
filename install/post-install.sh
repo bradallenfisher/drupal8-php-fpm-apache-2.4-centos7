@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer global require drush/drush:7.*
+composer global require drush/drush:8.*
 echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
@@ -10,7 +10,7 @@ drush dl drush_cleanup
 drush cc drush
 
 sudo chown -R vagrant:vagrant /var/www/
-drush dl drupal --destination=/var/www/ --drupal-project-rename=html -y
+drush dl drupal-8 --destination=/var/www/ --drupal-project-rename=html -y
 
 cd /var/www/html
 drush site-install --account-pass=admin --db-url=mysql://root@localhost:22/test -y
