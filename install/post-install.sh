@@ -5,8 +5,8 @@ echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
 # install drush recipes
-drush dl drush_recipes -y
-drush dl drush_cleanup
+#drush dl drush_recipes -y
+#drush dl drush_cleanup
 drush cc drush
 
 sudo chown -R vagrant:vagrant /var/www/
