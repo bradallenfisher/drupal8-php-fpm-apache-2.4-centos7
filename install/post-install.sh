@@ -21,8 +21,6 @@ sudo chown -R apache:apache /var/www/html/sites/default/files/
 sudo systemctl start httpd.service
 
 drush cleanup -y
-drush cook d7adminux -y
-drush cook d7adminux -y
 
 # Install RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -31,6 +29,6 @@ source /home/vagrant/.rvm/scripts/rvm
 rvm gemset use global && gem install bundler
 
 sudo service firewalld stop
-
-exec bash
 echo "DUNZY!"
+exec bash
+
