@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install apache
-yum install nano deltarpm vim wget curl git httpd -y
+yum install unzip zip nano deltarpm vim wget curl git httpd -y
 
 # get some repos
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -23,7 +23,7 @@ yum install -y --enablerepo=remi-php70 php php-apcu php-fpm php-opcache php-cli 
 cat /vagrant/php/www.conf > /etc/php-fpm.d/www.conf
 
 #opcache settings
-cat /vagrant/php/opcache.ini > /etc/php.d/opcache.ini
+cat /vagrant/php/opcache.ini > /etc/php.d/10-opcache.ini
 
 #disable mod_php
 cat /vagrant/php/php.conf > /etc/httpd/conf.d/php.conf
