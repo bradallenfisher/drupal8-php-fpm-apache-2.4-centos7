@@ -15,7 +15,7 @@ systemctl enable mysqld.service
 /bin/systemctl start  mysqld.service
 yum update -y
 
-yum install -y --enablerepo=remi-php56 php php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
+yum install -y --enablerepo=remi-php70 php php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
 
 # varnish
 rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.0.el7.rpm
