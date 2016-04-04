@@ -20,14 +20,6 @@ sudo chown -R apache:apache /var/www/html/sites/default/files/
 #start the apache service now that we have an .htaccess file
 sudo systemctl start httpd.service
 
-drush cleanup -y
-
-# Install RVM
-#gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-##\curl -sSL https://get.rvm.io | bash -s stable
-#source /home/vagrant/.rvm/scripts/rvm
-#rvm gemset use global && gem install bundler
-
 sudo service firewalld stop
 echo "DUNZY!"
 exec bash
