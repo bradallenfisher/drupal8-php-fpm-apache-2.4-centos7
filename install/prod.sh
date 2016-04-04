@@ -38,6 +38,9 @@ cat php/opcache.ini > /etc/php.d/10-opcache.ini
 #disable mod_php
 cat php/php.conf > /etc/httpd/conf.d/php.conf
 
+#allow for clean urls
+cat html/html.conf > /etc/httpd/conf.d/html.conf
+
 #disable some un-needed modules.
 cat modules/00-base.conf > /etc/httpd/conf.modules.d/00-base.conf
 cat modules/00-dav.conf > /etc/httpd/conf.modules.d/00-dav.conf
