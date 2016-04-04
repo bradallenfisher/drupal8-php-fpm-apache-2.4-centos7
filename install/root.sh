@@ -2,19 +2,21 @@
 
 # install apache
 yum install nano deltarpm vim wget curl git httpd -y
+
 # get some repos
-rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
-rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+rpm -Uvh remi-release-7.rpm
 
 # get latest mysql
-wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-yum localinstall mysql-community-release-el7-5.noarch.rpm -y
+yum install -y http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm 
+yum install -y mysql mysql-server
+systemctl enable mysqld.service
+/bin/systemctl start  mysqld.service
 yum update -y
-yum install mysql-community-server -y
 
 # php
-yum install -y php56w php56w-fpm php56w-opcache php56w-cli php56w-common php56w-gd php56w-mbstring php56w-mcrypt php56w-pecl-apcu php56w-pdo php56w-xml php56w-mysqlnd
+yum install -y --enablerepo=remi-php56 php php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
 
 # PHP
 # The first pool
@@ -77,10 +79,3 @@ systemctl start  mysqld.service
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ln -s /usr/local/bin/composer /usr/bin/composer
-
-# Install node/grunt
-curl --silent --location https://rpm.nodesource.com/setup | bash -
-yum -y install nodejs
-yum -y install gcc-c++ make
-yum -y groupinstall 'Development Tools'
-npm install --global grunt-cli
