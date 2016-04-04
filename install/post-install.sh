@@ -4,6 +4,8 @@ composer global require drush/drush:8.*
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
+composer require twig/twig:~1.0
+
 # install drush recipes
 #drush dl drush_recipes -y
 #drush dl drush_cleanup
