@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # install apache
-yum install nano vim wget curl git httpd -y
+yum install nano deltarpm vim wget curl git httpd -y
 
 # get some repos
-rpm -Uvh https://mirror.webtatic.com/yum/el7/epel-release.rpm
-rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+rpm -Uvh remi-release-7.rpm
 
 # get latest mysql
-wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
-yum localinstall mysql-community-release-el7-5.noarch.rpm -y
+yum install -y http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm 
+yum install -y mysql mysql-server
+systemctl enable mysqld.service
+/bin/systemctl start  mysqld.service
 yum update -y
-yum install mysql-community-server -y
 
-# php
-yum install -y php56w php56w-fpm php56w-opcache php56w-cli php56w-common php56w-gd php56w-mbstring php56w-mcrypt php56w-pecl-apcu php56w-pdo php56w-xml php56w-mysqlnd
+yum install -y --enablerepo=remi-php56 php php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
 
 # varnish
 rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.0.el7.rpm
