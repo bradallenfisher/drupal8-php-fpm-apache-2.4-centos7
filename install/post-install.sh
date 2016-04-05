@@ -1,10 +1,13 @@
 #!/bin/bash
 
+# Drush Local
 composer global require drush/drush:8.*
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
-composer require twig/twig:~1.0
+# Drupal Console Local
+composer global require drupal/console:@stable
+echo "PATH=$PATH:~/.composer/vendor/bin" >> ~/.bash_profile
 
 # install drush recipes
 #drush dl drush_recipes -y
