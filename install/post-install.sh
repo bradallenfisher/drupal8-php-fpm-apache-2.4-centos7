@@ -5,10 +5,6 @@ composer global require drush/drush:8.*
 echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >> $HOME/.bashrc
 source $HOME/.bashrc
 
-# Drupal Console Local
-composer global require drupal/console:@stable
-echo "PATH=$PATH:~/.composer/vendor/bin" >> ~/.bash_profile
-
 # install drush recipes
 #drush dl drush_recipes -y
 #drush dl drush_cleanup
