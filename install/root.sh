@@ -82,3 +82,10 @@ systemctl start  mysqld.service
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 ln -s /usr/local/bin/composer /usr/bin/composer
+
+# Install Drupal Console
+curl https://drupalconsole.com/installer -L -o drupal.phar
+mv drupal.phar /usr/local/bin/drupal
+chmod +x /usr/local/bin/drupal
+ln -s /usr/local/bin/drupal /usr/bin/drupal
+
