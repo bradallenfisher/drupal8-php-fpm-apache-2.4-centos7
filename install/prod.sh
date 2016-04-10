@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install apache
-yum install nano deltarpm vim wget curl git httpd -y
+yum install unzip zip nano deltarpm vim wget curl git httpd -y
 
 # get some repos
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -15,7 +15,8 @@ systemctl enable mysqld.service
 /bin/systemctl start  mysqld.service
 yum update -y
 
-yum install -y --enablerepo=remi-php70 php php-devel php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
+# php
+yum install -y --enablerepo=remi-php70 php php-apcu php-fpm php-opcache php-cli php-common php-gd php-mbstring php-mcrypt php-pdo php-xml php-mysqlnd
 
 # varnish
 rpm --nosignature -i https://repo.varnish-cache.org/redhat/varnish-4.0.el7.rpm
