@@ -19,4 +19,4 @@ git clone https://github.com/bradallenfisher/drupal8-php-fpm-apache-2.4-centos7.
 yes | yum -y install git && git clone https://github.com/bradallenfisher/drupal8-php-fpm-apache-2.4-centos7.git && cd drupal8-php-fpm-apache-2.4-centos7 && chmod 700 install/prod.sh && install/prod.sh
 ```
 ## I recommend updating your ssh port and also changing the firewalld rules in prod.sh 
-You can find it on line 75 of /install/prod.sh
+You can find it on line 85 of /install/prod.sh
