@@ -1,5 +1,6 @@
 # DRUPAL 8 on php-fpm-apache-2.4
-# Before running this ...
+
+Play around with Drupal 8, Drush 8 and the Drupal Console, all pre-installed for you. Just ssh in to vagrant box or as root on a live demo server and start typing drush and console commands. 
 
 ## Vagrant
 Please add the following to your /etc/hosts file
